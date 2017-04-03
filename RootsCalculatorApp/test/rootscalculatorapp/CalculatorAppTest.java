@@ -347,13 +347,13 @@ public class CalculatorAppTest {
     
     
     @Test
-    private void clearButtonTest(){
+    public void clearButtonTest(){
         buttons[15].doClick();
         assertEquals("Expected string \"\", got string " + display.getText(), "", display);
     }
     
     @Test
-    private void plusButtonTest(){
+    public void plusButtonTest(){
         buttons[10].doClick();
         assertTrue("Did not activate ADD operation or turn on overWrite.", CalculatorApp.Operation.ADD.equals(calc.activeOperation) && calc.overWrite==true);
         //assertEquals("Did not activate add operation.", CalculatorApp.Operation.ADD, calc.activeOperation);
@@ -362,28 +362,28 @@ public class CalculatorAppTest {
     
     
     @Test
-    private void minusButtonTest(){
+    public void minusButtonTest(){
         buttons[11].doClick();
         assertTrue("Did not activate SUBTRACT operation or turn on overWrite.", CalculatorApp.Operation.SUBTRACT.equals(calc.activeOperation) && calc.overWrite==true);
         //assertEquals("Did not activate add operation.", CalculatorApp.Operation.ADD, calc.activeOperation);
     }
 
     @Test
-    private void timesButtonTest(){
+    public void timesButtonTest(){
         buttons[12].doClick();
         assertTrue("Did not activate MULTIPLY operation or turn on overWrite.", CalculatorApp.Operation.MULTIPLY.equals(calc.activeOperation) && calc.overWrite==true);
         //assertEquals("Did not activate add operation.", CalculatorApp.Operation.ADD, calc.activeOperation);
     }
 
     @Test
-    private void divideButtonTest(){
+    public void divideButtonTest(){
         buttons[13].doClick();
         assertTrue("Did not activate add operation or turn on overWrite.", CalculatorApp.Operation.DIVIDE.equals(calc.activeOperation) && calc.overWrite==true);
         //assertEquals("Did not activate add operation.", CalculatorApp.Operation.ADD, calc.activeOperation);
     }
     
     @Test
-    private void equalsButtonTest(){
+    public void equalsButtonTest(){
         double expectedValue;
         double firstNum;
         double secondNum;
