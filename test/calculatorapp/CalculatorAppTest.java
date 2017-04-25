@@ -5,7 +5,6 @@
  */
 package calculatorapp;
 
-import calculatorapp.CalculatorApp;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import org.junit.Test;
@@ -38,7 +37,6 @@ public class CalculatorAppTest {
         buttons[13] = calc.divideButton;
         buttons[14] = calc.equalsButton;
         buttons[15] = calc.clearButton;
-        buttons[16] = calc.decimalButton;
     }
     /**
      * 
@@ -306,18 +304,6 @@ public class CalculatorAppTest {
                     t);
     }
 
-    private void decimalButtonTest(){
-        String expectedValue;
-        display.setText("10");
-        calc.overWrite = false;
-        expectedValue = "10.";
-        assertEquals("Test 16 failed.", expectedValue, display.getText());
-        display.setText("10");
-        calc.overWrite = true;
-        expectedValue = "0.";
-        assertTrue("Decimal button test failed.", expectedValue.equals(display.getText()) && calc.overWrite == false);
-    }
-    
     private void numberButtonTest(int buttonNumber, int numberOfPresses){
         boolean ow = calc.overWrite;
         String prevValue = display.getText();
@@ -343,42 +329,41 @@ public class CalculatorAppTest {
                     t);
     }
     
-    
-    
+    @Test
     private void clearButtonTest(){
         buttons[15].doClick();
         assertEquals("Expected string \"\", got string " + display.getText(), "", display);
     }
     
+    @Test
     private void plusButtonTest(){
         buttons[10].doClick();
         assertTrue("Did not activate ADD operation or turn on overWrite.", CalculatorApp.Operation.ADD.equals(calc.activeOperation) && calc.overWrite==true);
         //assertEquals("Did not activate add operation.", CalculatorApp.Operation.ADD, calc.activeOperation);
     }
 
-    
-    
-    
+    @Test
     private void minusButtonTest(){
         buttons[11].doClick();
         assertTrue("Did not activate SUBTRACT operation or turn on overWrite.", CalculatorApp.Operation.SUBTRACT.equals(calc.activeOperation) && calc.overWrite==true);
         //assertEquals("Did not activate add operation.", CalculatorApp.Operation.ADD, calc.activeOperation);
     }
 
-    
+    @Test
     private void timesButtonTest(){
         buttons[12].doClick();
         assertTrue("Did not activate MULTIPLY operation or turn on overWrite.", CalculatorApp.Operation.MULTIPLY.equals(calc.activeOperation) && calc.overWrite==true);
         //assertEquals("Did not activate add operation.", CalculatorApp.Operation.ADD, calc.activeOperation);
     }
 
-    
+    @Test
     private void divideButtonTest(){
         buttons[13].doClick();
         assertTrue("Did not activate add operation or turn on overWrite.", CalculatorApp.Operation.DIVIDE.equals(calc.activeOperation) && calc.overWrite==true);
         //assertEquals("Did not activate add operation.", CalculatorApp.Operation.ADD, calc.activeOperation);
     }
     
+    @Test
     private void equalsButtonTest(){
         double expectedValue;
         double firstNum;
