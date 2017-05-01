@@ -307,7 +307,7 @@ public class CalculatorAppTest {
     }
 
     @Test
-    private void decimalButtonTest(){
+    public void decimalButtonTest(){
         String expectedValue;
         display.setText("10");
         calc.overWrite = false;
@@ -319,7 +319,7 @@ public class CalculatorAppTest {
         assertTrue("Decimal button test failed.", expectedValue.equals(display.getText()) && calc.overWrite == false);
     }
     
-    @Test
+   
     private void numberButtonTest(int buttonNumber, int numberOfPresses){
         boolean ow = calc.overWrite;
         String prevValue = display.getText();
