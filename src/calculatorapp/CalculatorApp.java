@@ -493,7 +493,13 @@ public class CalculatorApp extends javax.swing.JFrame {
      * @param n 
      */    
     private void addDigit(int n){
-        //Number button team insert code here
+        String digitString = Integer.toString(n);
+        if(overWrite){
+            displayField.setText(digitString);
+            overWrite = false;
+            }
+        else
+            displayField.setText(displayField.getText() + digitString);
     }
     
     /** set activeOperation to the operation o
